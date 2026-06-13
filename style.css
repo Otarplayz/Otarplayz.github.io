@@ -50,28 +50,35 @@ body {
 }
 
 /* Custom Reactive Cursor (Two-Part) */
-.cursor-dot {
-    width: 4px;
-    height: 4px;
-    background-color: var(--primary-glow);
-    border-radius: 50%;
-    position: fixed;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    z-index: 10000;
-}
+.cursor-dot {display: none !important;}
+.cursor-ring {display: none !important;}
 
-.cursor-ring {
-    width: 26px;
-    height: 26px;
-    border: 1.5px solid var(--primary-glow);
-    border-radius: 50%;
-    position: fixed;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    z-index: 9999;
-    box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
-    transition: width 0.2s, height 0.2s, background-color 0.2s;
+@media (pointer: fine) {
+    .cursor-dot {
+        display: block !important;
+        width: 4px;
+        height: 4px;
+        background-color: var(--primary-glow);
+        border-radius: 50%;
+        position: fixed;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        z-index: 10000;
+    }
+
+    .cursor-ring {
+        display: block !important;
+        width: 26px;
+        height: 26px;
+        border: 1.5px solid var(--primary-glow);
+        border-radius: 50%;
+        position: fixed;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        z-index: 9999;
+        box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+        transition: width 0.2s, height 0.2s, background-color 0.2s;
+    }
 }
 
 /* Navigation Bar */
